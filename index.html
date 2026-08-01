@@ -1,743 +1,281 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LingoVerse Admin CRUD Demo</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang chủ | LingoVerse</title>
+  <link rel="stylesheet" href="styles.css?v=20260801-notebook-detail-modal">
 </head>
-<body>
-  <section id="loginPage" class="login-page">
-    <div class="login-card">
-      <div class="login-logo">LV</div>
-      <h1>LingoVerse</h1>
-      <p>Admin Portal</p>
+<body class="home-reference-page" data-current-page="home">
 
-      <form id="loginForm">
-        <h2>Đăng nhập Admin</h2>
-        <span class="form-note">Demo: nhập bất kỳ email/mật khẩu để vào hệ thống.</span>
+<header class="site-header unified-header">
+  <div class="container header-inner unified-header-inner">
+    <a class="brand unified-brand" href="index.html" aria-label="LingoVerse">
+      <img class="brand-logo" src="assets/lingoverse-logo.png" alt="LingoVerse">
+    </a>
 
-        <label>Email</label>
-        <input type="email" value="admin@lingoverse.vn" required />
+    <button class="mobile-menu-button" type="button" data-mobile-menu aria-label="Mở menu">☰</button>
 
-        <label>Mật khẩu</label>
-        <input type="password" value="123456" required />
+    <nav class="main-nav unified-main-nav" data-main-nav>
+      <a href="index.html" data-page="home">Trang chủ</a>
+      <a href="translate.html" data-page="translate">Dịch</a>
+      <a href="lessons.html" data-page="lessons">Bài học</a>
+      <a href="tests.html" data-page="tests">Thi thử</a>
+      <a href="notebook.html" data-page="notebook">Sổ tay</a>
+      <a href="community.html" data-page="community">Cộng đồng</a>
+    </nav>
 
-        <div class="login-row">
-          <label class="check">
-            <input type="checkbox" checked />
-            Ghi nhớ đăng nhập
-          </label>
-          <a href="#">Quên mật khẩu?</a>
-        </div>
+    <div class="auth-actions unified-auth-actions" data-auth-area>
+      <a class="header-button" href="login.html">Đăng nhập</a>
+      <a class="header-button primary" href="register.html">Đăng ký</a>
+    </div>
+  </div>
+</header>
 
-        <button class="btn primary full" type="submit">Đăng nhập</button>
+<main class="home-reference-main">
+  <div class="container">
+    <section class="home-search-area">
+      <form class="home-large-search" data-dictionary-search>
+        <input
+          name="q"
+          type="search"
+          placeholder="Nhập từ tiếng Anh cần tra cứu..."
+          aria-label="Nhập từ tiếng Anh cần tra cứu"
+        >
+        <button type="submit" aria-label="Tra cứu">⌕</button>
       </form>
 
-      <small>© 2026 LingoVerse. All rights reserved.</small>
+      <div class="home-search-tabs" role="tablist">
+        <button class="home-search-tab active" type="button" data-search-mode="word">Từ vựng</button>
+        <button class="home-search-tab" type="button" data-search-mode="example">Ví dụ</button>
+        <button class="home-search-tab" type="button" data-search-mode="phrase">Kết hợp từ</button>
+      </div>
+    </section>
+
+    <div class="home-reference-grid">
+      <!-- Left column -->
+      <aside class="home-left-column">
+        <section class="home-panel">
+          <h2>Từ khóa hot</h2>
+          <div class="home-word-chips">
+            <a href="word.html?q=messy">messy</a>
+            <a href="word.html?q=fortune">fortune</a>
+            <a href="word.html?q=future">future</a>
+            <a href="word.html?q=peak">peak</a>
+            <a href="word.html?q=diagnose">diagnose</a>
+            <a href="word.html?q=conduct">conduct</a>
+            <a href="word.html?q=deny">deny</a>
+            <a href="word.html?q=respect">respect</a>
+            <a href="word.html?q=trend">trend</a>
+            <a href="word.html?q=type">type</a>
+            <a href="word.html?q=druggist">druggist</a>
+            <a href="word.html?q=oversee">oversee</a>
+            <a href="word.html?q=boast">boast</a>
+            <a href="word.html?q=forget">forget</a>
+            <a href="word.html?q=circulation">circulation</a>
+          </div>
+        </section>
+
+        <section class="home-panel">
+          <h2>Lịch sử</h2>
+          <div class="home-word-chips history-chips">
+            <a href="word.html?q=messy">messy</a>
+            <a href="word.html?q=fortune">fortune</a>
+            <a href="word.html?q=peak">peak</a>
+            <a href="word.html?q=diagnose">diagnose</a>
+            <a href="word.html?q=conduct">conduct</a>
+            <a href="word.html?q=deny">deny</a>
+            <a href="word.html?q=respect">respect</a>
+            <a href="word.html?q=trend">trend</a>
+            <a href="word.html?q=type">type</a>
+            <a href="word.html?q=druggist">druggist</a>
+            <a href="word.html?q=oversee">oversee</a>
+            <a href="word.html?q=boast">boast</a>
+            <a href="word.html?q=forget">forget</a>
+            <a href="word.html?q=circulation">circulation</a>
+          </div>
+        </section>
+
+        <section class="home-panel topic-panel">
+          <h2>Từ vựng theo chủ đề</h2>
+          <div class="home-topic-grid">
+            <a class="home-topic-card home-topic-wide" href="lesson-detail.html?topic=hoc-tap">
+              <span class="topic-icon">📚</span>
+              <span><strong>Học tập</strong><small>Tổng cộng: 888</small></span>
+            </a>
+            <a class="home-topic-card" href="lesson-detail.html?topic=am-nhac">
+              <span class="topic-icon">🎵</span><strong>Âm nhạc</strong>
+            </a>
+            <a class="home-topic-card" href="lesson-detail.html?topic=the-thao">
+              <span class="topic-icon">⚽</span><strong>Thể thao</strong>
+            </a>
+            <a class="home-topic-card" href="lesson-detail.html?topic=toan-hoc">
+              <span class="topic-icon">➗</span><strong>Toán học</strong>
+            </a>
+            <a class="home-topic-card" href="lesson-detail.html?topic=dia-ly">
+              <span class="topic-icon">🌍</span><strong>Địa lý</strong>
+            </a>
+            <a class="home-topic-card" href="lesson-detail.html?topic=sinh-vat-bien">
+              <span class="topic-icon">🐠</span><strong>Sinh vật biển</strong>
+            </a>
+            <a class="home-topic-card" href="lesson-detail.html?topic=moi-truong">
+              <span class="topic-icon">♻️</span><strong>Môi trường</strong>
+            </a>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Center column -->
+      <section class="home-center-column">
+        <section class="home-poster-slider" aria-label="Poster nổi bật">
+          <div class="home-poster-track" data-poster-track>
+            <a class="home-poster-slide" href="lesson-detail.html?topic=hoc-thong-minh">
+              <img src="assets/home-poster-1.svg" alt="Học tiếng Anh thông minh">
+            </a>
+            <a class="home-poster-slide" href="lesson-detail.html?topic=tu-vung-hinh-anh">
+              <img src="assets/home-poster-2.svg" alt="Học từ vựng qua hình ảnh">
+            </a>
+            <a class="home-poster-slide" href="tests.html">
+              <img src="assets/home-poster-3.svg" alt="Thi thử kiểm tra trình độ">
+            </a>
+          </div>
+
+          <button class="poster-arrow poster-arrow-left" type="button" data-poster-prev aria-label="Poster trước">‹</button>
+          <button class="poster-arrow poster-arrow-right" type="button" data-poster-next aria-label="Poster tiếp theo">›</button>
+
+          <div class="poster-dots" aria-label="Chọn poster">
+            <button class="active" type="button" data-poster-dot="0" aria-label="Poster 1"></button>
+            <button type="button" data-poster-dot="1" aria-label="Poster 2"></button>
+            <button type="button" data-poster-dot="2" aria-label="Poster 3"></button>
+          </div>
+        </section>
+
+        <section class="home-daily-tip">
+          <div class="daily-tip-meta">
+            <strong>Mẹo (1/20)</strong>
+            <span>Chủ đề: Thói quen</span>
+          </div>
+          <p>Gắn việc học tiếng Anh với một hoạt động hằng ngày, chẳng hạn nghe podcast khi đi xe hoặc ôn từ trước khi ngủ.</p>
+          <div class="daily-tip-controls">
+            <button type="button" data-tip-prev aria-label="Mẹo trước">‹</button>
+            <button type="button" data-tip-next aria-label="Mẹo tiếp theo">›</button>
+          </div>
+        </section>
+
+        <section class="home-level-panel">
+          <h2>Từ vựng theo trình độ</h2>
+          <div class="home-level-links">
+            <a href="lesson-detail.html?level=A1">A1</a>
+            <a href="lesson-detail.html?level=A2">A2</a>
+            <a href="lesson-detail.html?level=B1">B1</a>
+            <a href="lesson-detail.html?level=B2">B2</a>
+            <a href="lesson-detail.html?level=C1">C1</a>
+            <a href="lesson-detail.html?level=C2">C2</a>
+          </div>
+        </section>
+      </section>
+
+      <!-- Right column -->
+      <aside class="home-right-column">
+        <section class="home-panel streak-panel">
+          <div class="streak-title"><span>🔥</span><strong>Tra từ để giữ chuỗi</strong></div>
+          <div class="streak-days">
+            <div><i></i><span>T2</span></div>
+            <div><i></i><span>T3</span></div>
+            <div><i></i><span>T4</span></div>
+            <div><i></i><span>T5</span></div>
+            <div><i></i><span>T6</span></div>
+            <div><i></i><span>T7</span></div>
+            <div><i></i><span>CN</span></div>
+          </div>
+        </section>
+
+        <section class="home-panel ranking-panel">
+          <h2>Bảng xếp hạng</h2>
+          <div class="ranking-tabs">
+            <button class="active" type="button" data-rank-tab="week">Tuần</button>
+            <button type="button" data-rank-tab="month">Tháng</button>
+            <button type="button" data-rank-tab="year">Năm</button>
+          </div>
+
+          <div class="home-ranking-list" data-ranking-list>
+            <div class="home-rank-item">
+              <span class="rank-medal rank-1">1</span>
+              <strong>Việt Dũng</strong>
+              <span>Chuỗi: 7</span>
+              <span class="tiny-avatar">VD</span>
+            </div>
+            <div class="home-rank-item">
+              <span class="rank-medal rank-2">2</span>
+              <strong>Hải Dương</strong>
+              <span>Chuỗi: 7</span>
+              <span class="tiny-avatar">HD</span>
+            </div>
+            <div class="home-rank-item">
+              <span class="rank-medal rank-3">3</span>
+              <strong>Thanh Bình</strong>
+              <span>Chuỗi: 7</span>
+              <span class="tiny-avatar">TB</span>
+            </div>
+            <div class="home-rank-item">
+              <span class="rank-medal">4</span>
+              <strong>Thế Anh</strong>
+              <span>Chuỗi: 7</span>
+              <span class="tiny-avatar">TA</span>
+            </div>
+            <div class="home-rank-item">
+              <span class="rank-medal">5</span>
+              <strong>Hải Đăng</strong>
+              <span>Chuỗi: 7</span>
+              <span class="tiny-avatar">HĐ</span>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+</main>
+
+
+
+<footer class="site-footer unified-footer">
+  <div class="container unified-footer-inner">
+    <div class="unified-footer-brand">
+      <a class="brand" href="index.html" aria-label="LingoVerse">
+        <img class="brand-logo" src="assets/lingoverse-logo.png" alt="LingoVerse">
+      </a>
+      <p>Học tập Anh–Việt</p>
+    </div>
+
+    <div class="unified-footer-links">
+      <h4>Thông tin</h4>
+      <a href="lessons.html">Giới thiệu</a>
+      <a href="privacy.html">Chính sách &amp; điều khoản</a>
+    </div>
+
+    <div class="unified-footer-contact">
+      <h4>Liên hệ</h4>
+      <p>(+84) 889 289 707<br>support@lingoverse.com</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="TikTok">♪</a>
+        <a href="#" aria-label="Instagram">◎</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="authModal" aria-hidden="true">
+  <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="modal-icon">🔐</div>
+    <h2 id="authModalTitle">Bạn cần đăng nhập</h2>
+    <p id="authModalMessage">Đăng nhập để sử dụng chức năng này và lưu lại tiến trình của bạn.</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" type="button" data-close-auth-modal>Để sau</button>
+      <a class="modal-login" href="login.html" id="modalLoginLink">Đăng nhập ngay</a>
     </div>
   </section>
-
-  <div id="adminApp" class="admin-app hidden">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-mark">LV</div>
-        <div>
-          <h2>LingoVerse</h2>
-          <span>Admin Panel</span>
-        </div>
-      </div>
-
-      <nav class="sidebar-nav">
-        <button class="nav-item active" data-page="dashboard">🏠 Bảng điều khiển</button>
-        <button class="nav-item" data-page="users">👥 Quản lý người dùng</button>
-        <button class="nav-item" data-page="vocabulary">📚 Quản lý từ vựng</button>
-        <button class="nav-item" data-page="lessons">🧩 Quản lý bài học</button>
-        <button class="nav-item" data-page="tests">📝 Quản lý đề thi</button>
-        <button class="nav-item" data-page="community">💬 Quản lý cộng đồng</button>
-        <button class="nav-item" data-page="reports">📋 Báo cáo</button>
-        <button class="nav-item" data-page="settings">⚙️ Cài đặt</button>
-      </nav>
-
-      <div class="sidebar-footer">
-        <div class="admin-avatar">AD</div>
-        <div>
-          <strong>Admin</strong>
-          <span>Super Admin</span>
-        </div>
-      </div>
-    </aside>
-
-    <main class="main">
-      <header class="topbar">
-        <div>
-          <h1 id="pageTitle">Bảng điều khiển</h1>
-          <p id="pageSubtitle">Tổng quan nhanh hệ thống quản trị LingoVerse.</p>
-        </div>
-
-        <div class="topbar-actions">
-          <button id="resetDemoBtn" class="btn secondary">Khôi phục dữ liệu</button>
-          <button class="icon-btn">🔔</button>
-          <button id="logoutBtn" class="btn danger">Đăng xuất</button>
-        </div>
-      </header>
-
-      <!-- DASHBOARD -->
-      <section class="page active" id="dashboard">
-        <div class="stats">
-          <article class="stat-card">
-            <span class="stat-icon blue">👥</span>
-            <div>
-              <p>Người dùng</p>
-              <h3 id="countUsers">0</h3>
-              <small>Tài khoản trong hệ thống</small>
-            </div>
-          </article>
-          <article class="stat-card">
-            <span class="stat-icon green">📚</span>
-            <div>
-              <p>Từ vựng</p>
-              <h3 id="countWords">0</h3>
-              <small>Từ vựng đang quản lý</small>
-            </div>
-          </article>
-          <article class="stat-card">
-            <span class="stat-icon orange">🧩</span>
-            <div>
-              <p>Bài học</p>
-              <h3 id="countLessons">0</h3>
-              <small>Bài học theo cấp độ</small>
-            </div>
-          </article>
-          <article class="stat-card">
-            <span class="stat-icon blue">📝</span>
-            <div>
-              <p>Đề thi</p>
-              <h3 id="countTests">0</h3>
-              <small>Bộ đề kiểm tra</small>
-            </div>
-          </article>
-        </div>
-
-        <div class="grid-2">
-          <section class="panel">
-            <div class="panel-head">
-              <h2>Hoạt động gần đây</h2>
-            </div>
-            <div id="activityList" class="activity-list"></div>
-          </section>
-
-          <section class="panel">
-            <div class="panel-head">
-              <h2>Tác vụ nhanh</h2>
-            </div>
-            <div class="quick-actions">
-              <button class="quick-card" data-shortcut="users">Quản lý người dùng</button>
-              <button class="quick-card" data-shortcut="vocabulary">Quản lý từ vựng</button>
-              <button class="quick-card" data-shortcut="lessons" data-lesson-view-shortcut="lessonAdd">Thêm bài học</button>
-              <button class="quick-card" data-shortcut="tests" data-test-view-shortcut="testAdd">Thêm đề thi</button>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <!-- USERS -->
-      <section class="page" id="users">
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>Quản lý người dùng</h2>
-              <p>Lọc, xem chi tiết, sửa, xóa và khóa/mở khóa tài khoản.</p>
-            </div>
-            <button class="btn primary" data-add="users">+ Thêm người dùng</button>
-          </div>
-
-          <div class="filter-bar">
-            <input id="userSearch" placeholder="Tìm tên hoặc email..." />
-            <select id="userRole">
-              <option value="">Tất cả vai trò</option>
-              <option>Học viên</option>
-              <option>Admin</option>
-            </select>
-            <select id="userLevel">
-              <option value="">Tất cả cấp độ</option>
-              <option>A1</option><option>A2</option><option>B1</option><option>B2</option>
-            </select>
-            <select id="userStatus">
-              <option value="">Tất cả trạng thái</option>
-              <option>Hoạt động</option><option>Bị khóa</option>
-            </select>
-            <button class="btn secondary" data-reset="users">Xóa lọc</button>
-          </div>
-
-          <p class="result-count" id="userCount"></p>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Người dùng</th>
-                  <th>Email</th>
-                  <th>Vai trò</th>
-                  <th>Cấp độ</th>
-                  <th>Ngày tham gia</th>
-                  <th>Trạng thái</th>
-                  <th>Thao tác</th>
-                </tr>
-              </thead>
-              <tbody id="userTable"></tbody>
-            </table>
-          </div>
-        </section>
-      </section>
-
-      <!-- VOCABULARY -->
-      <section class="page" id="vocabulary">
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>Quản lý từ vựng</h2>
-              <p>Thêm, sửa, xóa, ẩn/hiện và import dữ liệu từ vựng.</p>
-            </div>
-            <div class="btn-row">
-              <button id="openImportBtn" class="btn secondary">Import Excel</button>
-              <button class="btn primary" data-add="words">+ Thêm từ vựng</button>
-            </div>
-          </div>
-
-          <div class="filter-bar">
-            <input id="wordSearch" placeholder="Tìm từ, nghĩa, phiên âm..." />
-            <select id="wordTopic">
-              <option value="">Tất cả chủ đề</option>
-              <option>Chào hỏi</option><option>Du lịch</option><option>Công việc</option><option>Học tập</option><option>Ẩm thực</option>
-            </select>
-            <select id="wordLevel">
-              <option value="">Tất cả cấp độ</option>
-              <option>A1</option><option>A2</option><option>B1</option><option>B2</option>
-            </select>
-            <select id="wordStatus">
-              <option value="">Tất cả trạng thái</option>
-              <option>Hiển thị</option><option>Đã ẩn</option>
-            </select>
-            <button class="btn secondary" data-reset="words">Xóa lọc</button>
-          </div>
-
-          <p class="result-count" id="wordCount"></p>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Từ vựng</th>
-                  <th>Phiên âm</th>
-                  <th>Nghĩa</th>
-                  <th>Từ loại</th>
-                  <th>Chủ đề</th>
-                  <th>Cấp độ</th>
-                  <th>Trạng thái</th>
-                  <th>Thao tác</th>
-                </tr>
-              </thead>
-              <tbody id="wordTable"></tbody>
-            </table>
-          </div>
-        </section>
-      </section>
-
-      <!-- LESSONS -->
-      <section class="page" id="lessons">
-        <div class="subnav">
-          <button class="subtab active" data-lesson-view="lessonList">Danh sách bài học</button>
-          <button class="subtab" data-lesson-view="lessonAdd">Thêm bài học</button>
-          <button class="subtab" data-lesson-view="lessonDetail">Chi tiết bài học</button>
-        </div>
-
-        <section class="subview active" id="lessonList">
-          <div class="panel">
-            <div class="panel-head">
-              <div>
-                <h2>Quản lý bài học</h2>
-                <p>Danh sách bài học từ vựng theo cấp độ và chủ đề.</p>
-              </div>
-              <button class="btn primary" data-lesson-view-btn="lessonAdd">+ Thêm bài học</button>
-            </div>
-
-            <div class="filter-bar">
-              <input id="lessonSearch" placeholder="Tìm tên bài học..." />
-              <select id="lessonTopic">
-                <option value="">Tất cả chủ đề</option>
-                <option>Chào hỏi</option><option>Du lịch</option><option>Công việc</option><option>Học tập</option><option>Ẩm thực</option>
-              </select>
-              <select id="lessonLevel">
-                <option value="">Tất cả cấp độ</option>
-                <option>A1</option><option>A2</option><option>B1</option><option>B2</option>
-              </select>
-              <select id="lessonStatus">
-                <option value="">Tất cả trạng thái</option>
-                <option>Hiển thị</option><option>Bản nháp</option><option>Đã ẩn</option>
-              </select>
-              <button class="btn secondary" data-reset="lessons">Xóa lọc</button>
-            </div>
-
-            <p class="result-count" id="lessonCount"></p>
-            <div class="card-grid" id="lessonGrid"></div>
-          </div>
-        </section>
-
-        <section class="subview" id="lessonAdd">
-          <div class="panel">
-            <div class="panel-head">
-              <div>
-                <h2>Thêm bài học</h2>
-                <p>Tạo bài học mới với danh sách từ vựng, mẫu câu và luyện tập.</p>
-              </div>
-            </div>
-
-            <form id="lessonForm" class="form-grid">
-              <div class="form-box">
-                <h3>Thông tin cơ bản</h3>
-                <label>Tên bài học</label>
-                <input name="title" placeholder="A1 - Chào hỏi cơ bản" required />
-
-                <label>Chủ đề</label>
-                <select name="topic">
-                  <option>Chào hỏi</option><option>Du lịch</option><option>Công việc</option><option>Học tập</option><option>Ẩm thực</option>
-                </select>
-
-                <label>Cấp độ</label>
-                <select name="level">
-                  <option>A1</option><option>A2</option><option>B1</option><option>B2</option>
-                </select>
-
-                <label>Mô tả</label>
-                <textarea name="desc" placeholder="Nhập mô tả ngắn cho bài học..."></textarea>
-              </div>
-
-              <div class="form-box">
-                <h3>Nội dung bài học</h3>
-                <label>Số từ vựng</label>
-                <input name="words" type="number" value="25" min="1" />
-
-                <label>Số bài luyện tập</label>
-                <input name="practice" type="number" value="3" min="0" />
-
-                <label>Trạng thái</label>
-                <select name="status">
-                  <option>Hiển thị</option><option>Bản nháp</option><option>Đã ẩn</option>
-                </select>
-
-                <label>Danh sách từ vựng mẫu</label>
-                <textarea name="vocabList" placeholder="hello, hi, goodbye, thank you..."></textarea>
-              </div>
-
-              <div class="form-actions">
-                <button type="reset" class="btn secondary">Xóa nội dung</button>
-                <button type="submit" class="btn primary">Lưu bài học</button>
-              </div>
-            </form>
-          </div>
-        </section>
-
-        <section class="subview" id="lessonDetail">
-          <div class="panel">
-            <div class="panel-head">
-              <div>
-                <h2>Chi tiết bài học</h2>
-                <p id="lessonDetailDesc">Quản lý nội dung chi tiết của bài học.</p>
-              </div>
-              <button class="btn primary" data-edit-current-lesson>Sửa bài học này</button>
-            </div>
-
-            <div id="lessonDetailContent" class="detail-layout"></div>
-          </div>
-        </section>
-      </section>
-
-      <!-- TESTS -->
-      <section class="page" id="tests">
-        <div class="subnav">
-          <button class="subtab active" data-test-view="testList">Danh sách đề thi</button>
-          <button class="subtab" data-test-view="testAdd">Thêm đề thi</button>
-          <button class="subtab" data-test-view="testDetail">Chi tiết đề thi</button>
-        </div>
-
-        <section class="subview active" id="testList">
-          <div class="panel">
-            <div class="panel-head">
-              <div>
-                <h2>Quản lý đề thi</h2>
-                <p>Danh sách đề thi, thời lượng, cấp độ và trạng thái xuất bản.</p>
-              </div>
-              <button class="btn primary" data-test-view-btn="testAdd">+ Thêm đề thi</button>
-            </div>
-
-            <div class="filter-bar">
-              <input id="testSearch" placeholder="Tìm tên đề thi..." />
-              <select id="testType">
-                <option value="">Tất cả loại đề</option>
-                <option>Trắc nghiệm</option><option>Nghe</option><option>Đọc hiểu</option><option>Tổng hợp</option>
-              </select>
-              <select id="testLevel">
-                <option value="">Tất cả cấp độ</option>
-                <option>A1</option><option>A2</option><option>B1</option><option>B2</option>
-              </select>
-              <select id="testStatus">
-                <option value="">Tất cả trạng thái</option>
-                <option>Hiển thị</option><option>Bản nháp</option><option>Đã ẩn</option>
-              </select>
-              <button class="btn secondary" data-reset="tests">Xóa lọc</button>
-            </div>
-
-            <p class="result-count" id="testCount"></p>
-
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Tên đề thi</th>
-                    <th>Loại</th>
-                    <th>Cấp độ</th>
-                    <th>Số câu</th>
-                    <th>Thời lượng</th>
-                    <th>Lượt làm</th>
-                    <th>Trạng thái</th>
-                    <th>Thao tác</th>
-                  </tr>
-                </thead>
-                <tbody id="testTable"></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section class="subview" id="testAdd">
-          <div class="panel">
-            <div class="panel-head">
-              <div>
-                <h2>Thêm đề thi</h2>
-                <p>Tạo bộ đề kiểm tra theo cấp độ, dạng câu hỏi và thời gian làm bài.</p>
-              </div>
-            </div>
-
-            <form id="testForm" class="form-grid">
-              <div class="form-box">
-                <h3>Thông tin đề thi</h3>
-                <label>Tên đề thi</label>
-                <input name="title" placeholder="Kiểm tra A2 - Du lịch" required />
-
-                <label>Loại đề</label>
-                <select name="type">
-                  <option>Trắc nghiệm</option><option>Nghe</option><option>Đọc hiểu</option><option>Tổng hợp</option>
-                </select>
-
-                <label>Cấp độ</label>
-                <select name="level">
-                  <option>A1</option><option>A2</option><option>B1</option><option>B2</option>
-                </select>
-
-                <label>Thời lượng</label>
-                <input name="duration" placeholder="35 phút" />
-              </div>
-
-              <div class="form-box">
-                <h3>Cấu hình</h3>
-                <label>Số câu hỏi</label>
-                <input name="questions" type="number" value="30" min="1" />
-
-                <label>Lượt làm ban đầu</label>
-                <input name="attempts" type="number" value="0" min="0" />
-
-                <label>Trạng thái</label>
-                <select name="status">
-                  <option>Hiển thị</option><option>Bản nháp</option><option>Đã ẩn</option>
-                </select>
-
-                <label>Mô tả</label>
-                <textarea name="desc" placeholder="Mô tả ngắn về đề thi..."></textarea>
-              </div>
-
-              <div class="form-actions">
-                <button type="reset" class="btn secondary">Xóa nội dung</button>
-                <button type="submit" class="btn primary">Lưu đề thi</button>
-              </div>
-            </form>
-          </div>
-        </section>
-
-        <section class="subview" id="testDetail">
-          <div class="panel">
-            <div class="panel-head">
-              <div>
-                <h2>Chi tiết đề thi</h2>
-                <p id="testDetailDesc">Quản lý câu hỏi và đáp án của đề thi.</p>
-              </div>
-              <button class="btn primary" data-edit-current-test>Sửa đề thi này</button>
-            </div>
-
-            <div id="testDetailContent" class="detail-layout"></div>
-          </div>
-        </section>
-      </section>
-
-      <!-- COMMUNITY -->
-      <section class="page" id="community">
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>Quản lý cộng đồng</h2>
-              <p>Kiểm duyệt bài viết, bình luận và báo cáo vi phạm.</p>
-            </div>
-            <button class="btn primary" data-add="community">+ Thêm nội dung</button>
-          </div>
-
-          <div class="filter-bar">
-            <input id="communitySearch" placeholder="Tìm nội dung hoặc người đăng..." />
-            <select id="communityType">
-              <option value="">Tất cả loại</option>
-              <option>Bài viết</option><option>Bình luận</option><option>Báo cáo</option>
-            </select>
-            <select id="communityReason">
-              <option value="">Tất cả lý do</option>
-              <option>Không vi phạm</option><option>Spam</option><option>Ngôn từ không phù hợp</option><option>Link ngoài</option>
-            </select>
-            <select id="communityStatus">
-              <option value="">Tất cả trạng thái</option>
-              <option>Hiển thị</option><option>Chờ xử lý</option><option>Đã ẩn</option>
-            </select>
-            <button class="btn secondary" data-reset="community">Xóa lọc</button>
-          </div>
-
-          <p class="result-count" id="communityCount"></p>
-
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Nội dung</th>
-                  <th>Loại</th>
-                  <th>Người đăng</th>
-                  <th>Lý do/Báo cáo</th>
-                  <th>Ngày</th>
-                  <th>Trạng thái</th>
-                  <th>Thao tác</th>
-                </tr>
-              </thead>
-              <tbody id="communityTable"></tbody>
-            </table>
-          </div>
-        </section>
-      </section>
-
-      <!-- REPORTS -->
-      <section class="page" id="reports">
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>Báo cáo</h2>
-              <p>Báo cáo tổng hợp về người dùng, học tập, đề thi và cộng đồng.</p>
-            </div>
-            <button id="exportReportBtn" class="btn primary">Xuất báo cáo</button>
-          </div>
-
-          <div class="filter-bar report-filter">
-            <select id="reportPeriod">
-              <option value="week">7 ngày gần đây</option>
-              <option value="month">30 ngày gần đây</option>
-              <option value="quarter">Quý hiện tại</option>
-            </select>
-            <select id="reportType">
-              <option value="">Tất cả loại báo cáo</option>
-              <option>Người dùng</option>
-              <option>Học tập</option>
-              <option>Đề thi</option>
-              <option>Cộng đồng</option>
-            </select>
-            <button id="applyReportBtn" class="btn secondary">Áp dụng</button>
-          </div>
-
-          <div class="stats report-stats">
-            <article class="stat-card">
-              <span class="stat-icon blue">🔍</span>
-              <div>
-                <p>Lượt tra cứu</p>
-                <h3 id="reportSearchCount">0</h3>
-                <small>Theo khoảng thời gian lọc</small>
-              </div>
-            </article>
-            <article class="stat-card">
-              <span class="stat-icon green">🧩</span>
-              <div>
-                <p>Lượt học bài</p>
-                <h3 id="reportLessonCount">0</h3>
-                <small>Bài học đã mở</small>
-              </div>
-            </article>
-            <article class="stat-card">
-              <span class="stat-icon orange">📝</span>
-              <div>
-                <p>Lượt làm đề</p>
-                <h3 id="reportTestCount">0</h3>
-                <small>Đề thi đã làm</small>
-              </div>
-            </article>
-            <article class="stat-card">
-              <span class="stat-icon blue">💬</span>
-              <div>
-                <p>Báo cáo cộng đồng</p>
-                <h3 id="reportCommunityCount">0</h3>
-                <small>Nội dung cần kiểm duyệt</small>
-              </div>
-            </article>
-          </div>
-
-          <div class="grid-2">
-            <div class="mini-section">
-              <div class="mini-head">
-                <h3>Biểu đồ hoạt động</h3>
-              </div>
-              <div id="reportChart" class="bar-chart"></div>
-            </div>
-
-            <div class="mini-section">
-              <div class="mini-head">
-                <h3>Top nội dung</h3>
-              </div>
-              <ol id="reportRank" class="rank-list"></ol>
-            </div>
-          </div>
-
-          <div class="mini-section report-table-section">
-            <div class="mini-head">
-              <h3>Bảng báo cáo chi tiết</h3>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Nhóm báo cáo</th>
-                    <th>Nội dung</th>
-                    <th>Số lượng</th>
-                    <th>Tăng trưởng</th>
-                    <th>Ghi chú</th>
-                    <th>Thao tác</th>
-                  </tr>
-                </thead>
-                <tbody id="reportTable"></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <!-- SETTINGS -->
-      <section class="page" id="settings">
-        <section class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>Cài đặt hệ thống</h2>
-              <p>Thiết lập thông tin chung và quy định vận hành hệ thống.</p>
-            </div>
-          </div>
-
-          <form id="settingsForm" class="form-grid">
-            <div class="form-box">
-              <h3>Thông tin chung</h3>
-              <label>Tên website</label>
-              <input value="LingoVerse" />
-
-              <label>Slogan</label>
-              <input value="Học từ vựng mỗi ngày, chinh phục thế giới!" />
-
-              <label>Email hỗ trợ</label>
-              <input value="support@lingoverse.vn" />
-
-              <label>Ngôn ngữ mặc định</label>
-              <select>
-                <option>Tiếng Việt</option><option>English</option>
-              </select>
-            </div>
-
-            <div class="form-box">
-              <h3>Cấu hình chức năng</h3>
-              <label>Dung lượng file dịch tối đa</label>
-              <select>
-                <option>10MB</option><option>20MB</option><option>50MB</option>
-              </select>
-
-              <label>Định dạng file dịch</label>
-              <input value=".docx, .pdf, .txt" />
-
-              <label>Kiểm duyệt cộng đồng</label>
-              <select>
-                <option>Duyệt sau khi bị báo cáo</option>
-                <option>Duyệt trước khi hiển thị</option>
-              </select>
-
-              <label>Chế độ bảo trì</label>
-              <select>
-                <option>Tắt</option><option>Bật</option>
-              </select>
-            </div>
-
-            <div class="form-actions">
-              <button type="reset" class="btn secondary">Khôi phục</button>
-              <button type="submit" class="btn primary">Lưu cài đặt</button>
-            </div>
-          </form>
-        </section>
-      </section>
-    </main>
-  </div>
-
-  <!-- IMPORT MODAL -->
-  <div id="importModal" class="modal hidden">
-    <div class="modal-card">
-      <div class="modal-head">
-        <h2>Import từ vựng bằng Excel</h2>
-        <button id="closeImportBtn" class="icon-btn">×</button>
-      </div>
-
-      <div class="upload-box">
-        <h3>⬆ Kéo thả file Excel vào đây</h3>
-        <p>Hỗ trợ định dạng .xlsx, tối đa 10MB.</p>
-        <button class="btn primary">Chọn file</button>
-      </div>
-
-      <div class="excel-info">
-        <h3>Cấu trúc file mẫu</h3>
-        <p>TuTiengAnh, NghiaTiengViet, PhienAm, TuLoai, ViDu, CapDo, ChuDe</p>
-      </div>
-
-      <div class="form-actions">
-        <button class="btn secondary">Tải file mẫu</button>
-        <button class="btn primary">Kiểm tra dữ liệu</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- CRUD MODAL -->
-  <div id="crudModal" class="modal hidden">
-    <div class="modal-card modal-wide">
-      <div class="modal-head">
-        <h2 id="crudTitle">Chi tiết</h2>
-        <button id="closeCrudBtn" class="icon-btn">×</button>
-      </div>
-      <div id="crudBody"></div>
-      <div id="crudActions" class="form-actions"></div>
-    </div>
-  </div>
-
-  <!-- CONFIRM MODAL -->
-  <div id="confirmModal" class="modal hidden">
-    <div class="modal-card confirm-card">
-      <h2 id="confirmTitle">Xác nhận</h2>
-      <p id="confirmText">Bạn có chắc chắn muốn thực hiện thao tác này?</p>
-      <div class="form-actions">
-        <button id="cancelConfirmBtn" class="btn secondary">Hủy</button>
-        <button id="okConfirmBtn" class="btn danger">Xác nhận</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="toast" class="toast hidden">Đã cập nhật demo</div>
+</div>
+<script src="app.js?v=20260801-notebook-detail-modal"></script>
 </body>
 </html>
