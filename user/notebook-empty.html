@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sổ tay | LingoVerse</title>
+  <link rel="stylesheet" href="styles.css?v=20260801-exam-border-start-fix">
+</head>
+<body class="notebook-smart-body" data-current-page="notebook">
+<header class="site-header unified-header">
+  <div class="container header-inner unified-header-inner">
+    <a class="brand unified-brand" href="index.html" aria-label="LingoVerse">
+      <img class="brand-logo" src="assets/lingoverse-logo.png" alt="LingoVerse">
+    </a>
+
+    <button class="mobile-menu-button" type="button" data-mobile-menu aria-label="Mở menu">☰</button>
+
+    <nav class="main-nav unified-main-nav" data-main-nav>
+      <a href="index.html" data-page="home">Trang chủ</a>
+      <a href="translate.html" data-page="translate">Dịch</a>
+      <a href="lessons.html" data-page="lessons">Bài học</a>
+      <a href="tests.html" data-page="tests">Thi thử</a>
+      <a href="notebook.html" data-page="notebook">Sổ tay</a>
+      <a href="community.html" data-page="community">Cộng đồng</a>
+    </nav>
+
+    <div class="auth-actions unified-auth-actions" data-auth-area>
+      <a class="header-button" href="login.html">Đăng nhập</a>
+      <a class="header-button primary" href="register.html">Đăng ký</a>
+    </div>
+  </div>
+</header>
+
+<main class="notebook-clean-page">
+  <div class="container notebook-clean-container">
+    <section class="notebook-clean-titlebar">
+      <h1>Sổ tay của tôi</h1>
+
+      <button class="notebook-clean-create-button" id="openNotebookForm" type="button">
+        Tạo sổ tay
+      </button>
+    </section>
+
+    <section class="notebook-clean-workspace">
+      <div class="notebook-clean-hidden-controls" aria-hidden="true">
+        <span id="notebookCount">0</span>
+        <span id="savedWordCount">0</span>
+        <span id="lastNotebookUpdate">—</span>
+
+        <input id="notebookSearchInput" type="search">
+        <select id="notebookSortSelect">
+          <option value="recent">Cập nhật gần nhất</option>
+          <option value="name">Tên A–Z</option>
+          <option value="count">Nhiều từ nhất</option>
+        </select>
+      </div>
+
+      <div class="notebook-clean-empty" id="notebookEmptyState">
+        <img src="assets/notebook-empty.png" alt="LingoVerse">
+        <p>Bạn chưa có sổ tay nào</p>
+      </div>
+
+      <div class="notebook-clean-list" id="notebookList" hidden></div>
+    </section>
+  </div>
+</main>
+
+<div class="notebook-name-modal-backdrop" id="notebookNameModal" hidden>
+  <section class="notebook-name-modal" role="dialog" aria-modal="true" aria-labelledby="notebookNameModalTitle">
+    <button class="notebook-name-modal-close" id="closeNotebookNameModal" type="button" aria-label="Đóng">×</button>
+
+    <h2 id="notebookNameModalTitle">Tạo sổ tay</h2>
+
+    <form id="notebookNameModalForm">
+      <label for="notebookModalName">Tên sổ tay</label>
+      <input
+        id="notebookModalName"
+        type="text"
+        maxlength="50"
+        placeholder="Nhập tên sổ tay của bạn"
+        autocomplete="off"
+      >
+
+      <div class="notebook-name-modal-actions">
+        <button type="button" id="cancelNotebookNameModal">Hủy</button>
+        <button type="submit" id="submitNotebookNameModal">Thêm</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+
+
+
+
+<footer class="site-footer unified-footer">
+  <div class="container unified-footer-inner">
+    <div class="unified-footer-brand">
+      <a class="brand" href="index.html" aria-label="LingoVerse">
+        <img class="brand-logo" src="assets/lingoverse-logo.png" alt="LingoVerse">
+      </a>
+      <p>Học tập Anh–Việt</p>
+    </div>
+
+    <div class="unified-footer-links">
+      <h4>Thông tin</h4>
+      <a href="lessons.html">Giới thiệu</a>
+      <a href="privacy.html">Chính sách &amp; điều khoản</a>
+    </div>
+
+    <div class="unified-footer-contact">
+      <h4>Liên hệ</h4>
+      <p>(+84) 889 289 707<br>support@lingoverse.com</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="TikTok">♪</a>
+        <a href="#" aria-label="Instagram">◎</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="authModal" aria-hidden="true">
+  <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="modal-icon">🔐</div>
+    <h2 id="authModalTitle">Bạn cần đăng nhập</h2>
+    <p id="authModalMessage">Đăng nhập để sử dụng chức năng này và lưu lại tiến trình của bạn.</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" type="button" data-close-auth-modal>Để sau</button>
+      <a class="modal-login" href="login.html" id="modalLoginLink">Đăng nhập ngay</a>
+    </div>
+  </section>
+</div>
+<script src="app.js?v=20260801-exam-border-start-fix"></script>
+
+</body>
+</html>

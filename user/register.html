@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạo tài khoản | LingoVerse</title>
+  <link rel="stylesheet" href="styles.css?v=20260801-exam-border-start-fix">
+</head>
+<body class="auth-page">
+  <main class="auth-main">
+    <div>
+      <div class="auth-heading">
+        <a class="brand" href="index.html" aria-label="LingoVerse"><img class="brand-logo" src="assets/lingoverse-logo.png" alt="LingoVerse"></a>
+        <h1>TẠO TÀI KHOẢN</h1>
+        <p>Unlock your English today</p>
+      </div>
+
+      <section class="register-card">
+        <form id="registerForm" novalidate>
+          <h2 class="form-title">ĐĂNG KÝ</h2>
+
+          <div class="form-group">
+            <label for="fullName">HỌ VÀ TÊN</label>
+            <input id="fullName" type="text" placeholder="Nhập họ tên" autocomplete="name">
+            <small class="form-error" id="fullNameError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="registerEmail">EMAIL</label>
+            <input id="registerEmail" type="email" placeholder="Nhập Email" autocomplete="email">
+            <small class="form-error" id="registerEmailError"></small>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="registerPassword">MẬT KHẨU</label>
+              <div class="password-field">
+                <input id="registerPassword" type="password" placeholder="Nhập mật khẩu" autocomplete="new-password">
+                <button class="password-toggle" type="button" data-password-toggle="registerPassword">👁</button>
+              </div>
+              <small class="form-error" id="registerPasswordError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">XÁC NHẬN MẬT KHẨU</label>
+              <div class="password-field">
+                <input id="confirmPassword" type="password" placeholder="Nhập lại mật khẩu" autocomplete="new-password">
+                <button class="password-toggle" type="button" data-password-toggle="confirmPassword">👁</button>
+              </div>
+              <small class="form-error" id="confirmPasswordError"></small>
+            </div>
+          </div>
+
+          <button class="auth-submit" type="submit">Tạo tài khoản</button>
+
+          <div class="form-divider"><span></span><b>Hoặc</b><span></span></div>
+          <div class="auth-socials">
+            <button type="button" data-demo-social="Google">G&nbsp;&nbsp; Google</button>
+            <button type="button" data-demo-social="Facebook">f&nbsp;&nbsp; Facebook</button>
+          </div>
+          <p class="auth-switch">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="auth-footer">
+    <a href="#">Chính sách bảo mật</a>
+    <a href="#">Điều khoản dịch vụ</a>
+    <a href="#">Trung tâm trợ giúp</a>
+  </footer>
+  <script src="app.js?v=20260801-exam-border-start-fix"></script>
+</body>
+</html>
