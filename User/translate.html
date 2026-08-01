@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dịch | LingoVerse</title>
+  <link rel="stylesheet" href="styles.css?v=20260801-community-guest">
+</head>
+<body class="matched-page translate-matched-body" data-current-page="translate">
+
+<header class="site-header unified-header">
+  <div class="container header-inner unified-header-inner">
+    <a class="brand unified-brand" href="index.html" aria-label="LingoVerse">
+      <img class="brand-logo" src="assets/lingoverse-logo.png" alt="LingoVerse">
+    </a>
+
+    <button class="mobile-menu-button" type="button" data-mobile-menu aria-label="Mở menu">☰</button>
+
+    <nav class="main-nav unified-main-nav" data-main-nav>
+      <a href="index.html" data-page="home">Trang chủ</a>
+      <a href="translate.html" data-page="translate">Dịch</a>
+      <a href="lessons.html" data-page="lessons">Bài học</a>
+      <a href="tests.html" data-page="tests">Thi thử</a>
+      <a href="notebook.html" data-page="notebook">Sổ tay</a>
+      <a href="community.html" data-page="community">Cộng đồng</a>
+    </nav>
+
+    <div class="auth-actions unified-auth-actions" data-auth-area>
+      <a class="header-button" href="login.html">Đăng nhập</a>
+      <a class="header-button primary" href="register.html">Đăng ký</a>
+    </div>
+  </div>
+</header>
+
+
+<main class="translate-match-page">
+  <div class="container translate-match-container">
+    <nav class="translate-mode-tabs" aria-label="Chế độ dịch">
+      <button class="active" id="textTranslateTab" type="button">Văn bản</button>
+      <button id="documentTranslateTab" type="button">Tài liệu</button>
+    </nav>
+
+    <section id="textTranslatePanel">
+      <div class="translate-match-grid">
+        <article class="translate-match-card">
+          <div class="translate-language-bar">
+            <button class="language-shortcut active" type="button" data-language-side="source" data-language="en">
+              Tiếng anh
+            </button>
+            <button class="language-shortcut" type="button" data-language-side="source" data-language="vi">
+              Tiếng Việt
+            </button>
+            <span class="translate-language-caret" aria-hidden="true">▼</span>
+
+            <select id="sourceLanguage" aria-label="Ngôn ngữ nguồn" hidden>
+              <option value="en">Tiếng anh</option>
+              <option value="vi">Tiếng Việt</option>
+            </select>
+          </div>
+
+          <textarea
+            id="sourceText"
+            maxlength="800"
+            placeholder="Nhập văn bản..."
+          ></textarea>
+
+          <div class="translate-match-bottom">
+            <button
+              class="translate-microphone"
+              id="voiceInputButton"
+              type="button"
+              aria-label="Nhập bằng giọng nói"
+            >♩</button>
+
+            <div>
+              <span class="translate-count"><span id="charCount">0</span>/800</span>
+              <button class="translate-inline-button" id="translateButton" type="button">Dịch</button>
+            </div>
+          </div>
+        </article>
+
+        <button id="swapLanguage" class="translate-swap-match" type="button" aria-label="Đổi ngôn ngữ">
+          ⇆
+        </button>
+
+        <article class="translate-match-card">
+          <div class="translate-language-bar">
+            <button class="language-shortcut" type="button" data-language-side="target" data-language="en">
+              Tiếng anh
+            </button>
+            <button class="language-shortcut active" type="button" data-language-side="target" data-language="vi">
+              Tiếng Việt
+            </button>
+            <span class="translate-language-caret" aria-hidden="true">▼</span>
+
+            <select id="targetLanguage" aria-label="Ngôn ngữ đích" hidden>
+              <option value="vi">Tiếng Việt</option>
+              <option value="en">Tiếng anh</option>
+            </select>
+          </div>
+
+          <textarea
+            id="translatedText"
+            readonly
+            placeholder=""
+          ></textarea>
+
+          <div class="translate-target-actions">
+            <button id="listenTranslation" type="button" aria-label="Nghe bản dịch">🔊</button>
+            <button id="clearTranslation" type="button">Xóa</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="translate-document-panel" id="documentTranslatePanel" hidden>
+      <div class="translate-document-grid">
+        <label class="document-drop-zone" id="documentDropZone">
+          <input
+            id="translationDocumentInput"
+            type="file"
+            accept=".txt,.doc,.docx,.pdf"
+          >
+
+          <span class="document-folder-illustration" aria-hidden="true">
+            <i></i>
+          </span>
+
+          <strong>Kéo và thả tài liệu của bạn vào đây</strong>
+          <small>Hoặc nhấn để chọn tài liệu từ máy tính</small>
+        </label>
+
+        <section class="document-upload-card">
+          <button id="selectDocumentButton" type="button">Duyệt qua các tệp</button>
+
+          <p>
+            Các tệp hỗ trợ: .pdf, .docx, .txt<br>
+            Chiều dài tối đa 4000 ký tự
+          </p>
+
+          <div class="selected-document-info" id="selectedDocumentInfo" hidden>
+            <span class="selected-document-icon">▤</span>
+            <div>
+              <strong id="selectedDocumentName"></strong>
+              <small id="selectedDocumentMeta"></small>
+            </div>
+            <button id="removeSelectedDocument" type="button" aria-label="Xóa tệp">×</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="translate-history-match">
+      <div class="translate-history-heading">
+        <h2>Lịch sử</h2>
+        <button id="clearTranslationHistory" type="button" hidden>Xóa lịch sử</button>
+      </div>
+
+      <div class="translate-history-empty" id="translateHistoryEmpty">
+        <img src="assets/notebook-empty.png" alt="">
+        <strong>Bạn chưa có lịch sử dịch</strong>
+      </div>
+
+      <div class="translate-history-list" id="translateHistoryList" hidden></div>
+    </section>
+  </div>
+</main>
+
+
+
+<footer class="site-footer unified-footer">
+  <div class="container unified-footer-inner">
+    <div class="unified-footer-brand">
+      <a class="brand" href="index.html" aria-label="LingoVerse">
+        <img class="brand-logo" src="assets/lingoverse-logo.png" alt="LingoVerse">
+      </a>
+      <p>Học tập Anh–Việt</p>
+    </div>
+
+    <div class="unified-footer-links">
+      <h4>Thông tin</h4>
+      <a href="lessons.html">Giới thiệu</a>
+      <a href="privacy.html">Chính sách &amp; điều khoản</a>
+    </div>
+
+    <div class="unified-footer-contact">
+      <h4>Liên hệ</h4>
+      <p>(+84) 889 289 707<br>support@lingoverse.com</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="TikTok">♪</a>
+        <a href="#" aria-label="Instagram">◎</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="authModal" aria-hidden="true">
+  <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="modal-icon">🔐</div>
+    <h2 id="authModalTitle">Bạn cần đăng nhập</h2>
+    <p id="authModalMessage">Đăng nhập để sử dụng chức năng này và lưu lại tiến trình của bạn.</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" type="button" data-close-auth-modal>Để sau</button>
+      <a class="modal-login" href="login.html" id="modalLoginLink">Đăng nhập ngay</a>
+    </div>
+  </section>
+</div>
+<script src="app.js?v=20260801-community-guest"></script>
+
+</body>
+</html>

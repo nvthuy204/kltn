@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập | LingoVerse</title>
+  <link rel="stylesheet" href="styles.css?v=20260801-community-guest">
+</head>
+<body class="auth-page">
+  <main class="auth-main">
+    <section class="login-card">
+      <div class="auth-heading">
+        <a class="brand" href="index.html" aria-label="LingoVerse"><img class="brand-logo" src="assets/lingoverse-logo.png" alt="LingoVerse"></a>
+        <p style="margin-top:12px">Learn English, Open your world</p>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="loginEmail">ĐỊA CHỈ EMAIL</label>
+          <input id="loginEmail" type="email" placeholder="abc@gmail.com" autocomplete="email">
+          <small class="form-error" id="loginEmailError"></small>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label-row">
+            <label for="loginPassword">MẬT KHẨU</label>
+            <a href="#" id="forgotPassword">Quên mật khẩu?</a>
+          </div>
+          <div class="password-field">
+            <input id="loginPassword" type="password" placeholder="••••••••" autocomplete="current-password">
+            <button class="password-toggle" type="button" data-password-toggle="loginPassword">👁</button>
+          </div>
+          <small class="form-error" id="loginPasswordError"></small>
+        </div>
+
+        <label class="remember"><input id="rememberEmail" type="checkbox"> Ghi nhớ mật khẩu</label>
+        <button class="auth-submit" type="submit">ĐĂNG NHẬP →</button>
+
+        <div class="form-divider"><span></span><b>Hoặc</b><span></span></div>
+        <div class="auth-socials">
+          <button type="button" data-demo-social="Google">G&nbsp;&nbsp; Google</button>
+          <button type="button" data-demo-social="Facebook">f&nbsp;&nbsp; Facebook</button>
+        </div>
+        <p class="auth-switch">Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="auth-footer">
+    <a href="#">Chính sách bảo mật</a>
+    <a href="#">Điều khoản dịch vụ</a>
+    <a href="#">Trung tâm trợ giúp</a>
+  </footer>
+  <script src="app.js?v=20260801-community-guest"></script>
+</body>
+</html>
