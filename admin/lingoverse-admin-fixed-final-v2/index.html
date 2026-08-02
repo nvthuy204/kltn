@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LingoVerse Admin</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <div class="admin-app">
+    <aside class="sidebar">
+      <div class="brand">◆ LingoVerse</div>
+
+      <div class="admin-profile">
+        <div class="avatar">AD</div>
+        <div>
+          <strong>Bếp trưởng Admin</strong>
+          <small>Quản trị hệ thống</small>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <button class="nav active" data-page="dashboard">👥 Tổng quan</button>
+        <button class="nav" data-page="users">👥 Người dùng</button>
+        <button class="nav" data-page="lessons">📖 Bài học</button>
+        <button class="nav" data-page="dictionary">🔤 Từ điển</button>
+        <button class="nav" data-page="tests">📝 Thi thử</button>
+        <button class="nav" data-page="reports">📋 Báo cáo</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="sidebar-primary" data-page="addLesson">+ Thêm bài học mới</button>
+        <button class="bottom-link" data-page="settings">⚙ Cài đặt</button>
+        <button class="logout-link">↪ Đăng xuất</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section id="app"></section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="modalTitle">Chi tiết</h2>
+        <button id="closeModalBtn" class="icon">×</button>
+      </div>
+      <div id="modalBody"></div>
+      <div id="modalActions" class="modal-actions"></div>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="modal hidden">
+    <div class="confirm-card">
+      <h2 id="confirmTitle">Xác nhận</h2>
+      <p id="confirmText">Bạn có chắc chắn muốn thực hiện thao tác này?</p>
+      <div class="modal-actions">
+        <button id="cancelConfirm" class="btn soft">Hủy</button>
+        <button id="okConfirm" class="btn danger">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="excelModal" class="modal hidden">
+    <div class="modal-card wide">
+      <div class="modal-head">
+        <div>
+          <h2>Import từ vựng bằng Excel</h2>
+          <p>Chọn file .xlsx, .xls hoặc .csv để xem preview và import vào Từ điển.</p>
+        </div>
+        <button id="closeExcelBtn" class="icon">×</button>
+      </div>
+
+      <div class="upload-area">
+        <div class="cloud">☁</div>
+        <h3>Nhấn để chọn file Excel</h3>
+        <p>File mẫu gồm: Từ vựng, Phiên âm, Nghĩa, Cấp độ, Chủ đề, Trạng thái.</p>
+        <input id="excelInput" type="file" accept=".xlsx,.xls,.csv" hidden>
+        <button id="chooseExcelBtn" class="btn primary">Chọn file</button>
+        <small id="fileName">Chưa chọn file nào.</small>
+      </div>
+
+      <div id="excelPreview" class="preview hidden">
+        <div class="section-title">
+          <h3>Preview dữ liệu</h3>
+          <button id="downloadTemplateBtn" class="btn soft">Tải file mẫu</button>
+        </div>
+        <div class="table-wrap compact">
+          <table>
+            <thead>
+              <tr>
+                <th>Từ vựng</th>
+                <th>Phiên âm</th>
+                <th>Nghĩa</th>
+                <th>Cấp độ</th>
+                <th>Chủ đề</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody id="previewRows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="cancelExcelBtn" class="btn soft">Hủy</button>
+        <button id="importExcelBtn" class="btn primary">Import vào từ điển</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden">Đã cập nhật</div>
+</body>
+</html>
